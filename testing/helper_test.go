@@ -109,7 +109,7 @@ func TestFlatten(t *testing.T) {
 			t.Errorf("Flattening was incorrect, got: %v, want: %v.", flattened, table.n)
 		}
 
-		for i, _ := range flattened {
+		for i := range flattened {
 			if flattened[i] != table.n[i] {
 				t.Errorf("Flattening was incorrect, got: %v, want: %v.", flattened, table.n)
 			}
@@ -158,8 +158,8 @@ func TestReadRecords(t *testing.T) {
 }
 
 func arrayEquals(arr1 [][]string, arr2 [][]string) bool {
-	for i, _ := range arr1 {
-		for j, _ := range arr1[i] {
+	for i := range arr1 {
+		for j := range arr1[i] {
 			if arr1[i][j] != arr2[i][j] {
 				return false
 			}

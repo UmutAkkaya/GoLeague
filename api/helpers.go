@@ -8,7 +8,9 @@ import (
 	"strings"
 )
 
-// Given an array of array flattens it by a level
+/*
+FlattenMatrix : Given an array of array flattens it by a level
+ */
 func FlattenMatrix(records [][]string) []string {
 	var response []string
 	for _, row := range records {
@@ -17,8 +19,10 @@ func FlattenMatrix(records [][]string) []string {
 	return response
 }
 
-// Applies the given operation to the elements of the matrix (records)
-// Takes in response which is the initial value
+/*
+ApplyOperation : Applies the given operation to the elements of the matrix (records)
+Takes in response which is the initial value
+*/
 func ApplyOperation(records [][]string, initialValue int, operation func(x int, y int) int) (int, error) {
 	var result = initialValue
 	for _, row := range records {
@@ -33,7 +37,9 @@ func ApplyOperation(records [][]string, initialValue int, operation func(x int, 
 	return result, nil
 }
 
-// Transpose a given matrix
+/*
+InvertMatrix : Transpose a given matrix
+ */
 func InvertMatrix(records [][]string) [][]string {
 	numRow := len(records) // 3
 
@@ -53,15 +59,23 @@ func InvertMatrix(records [][]string) [][]string {
 	return invertedMatrix
 }
 
+/*
+Add : adds up given 2 numbers and returns them
+ */
 func Add(x int, y int) int {
 	return x + y
 }
 
+/*
+Multiply : multiplies given 2 numbers and returns them
+*/
 func Multiply(x int, y int) int {
 	return x * y
 }
 
-// Given an array of array returns a comma seperated string representation
+/*
+MatrixToString : Given an array of array returns a comma seperated string representation
+ */
 func MatrixToString(matrix [][]string) string {
 	var response string
 	for _, row := range matrix {
@@ -71,7 +85,9 @@ func MatrixToString(matrix [][]string) string {
 	return response
 }
 
-// Given a requests with a file returns the values in the file
+/*
+ReadRecords : Given a requests with a file returns the values in the file
+ */
 func ReadRecords(request *http.Request) ([][]string, error) {
 	file, _, err := request.FormFile("file")
 	if err != nil {
