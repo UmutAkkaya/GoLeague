@@ -1,7 +1,7 @@
 package main
 
 import (
-	"league/api"
+	"./api"
 	"net/http"
 )
 

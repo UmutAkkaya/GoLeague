@@ -81,6 +81,11 @@ func MultiplyHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if len(records) == 0 {
+		fmt.Fprint(w, 0)
+		return
+	}
+
 	var response = 1
 	response, err = ApplyOperation(records, response, Multiply)
 	if err != nil {
